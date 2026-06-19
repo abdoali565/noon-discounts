@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>كود خصم نون السعودية</title>
+<title>كود خصم نون السعودية الشامل</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
   * { 
@@ -21,8 +21,8 @@
     align-items: flex-start;
     min-height: 100vh;
     padding: 40px 15px;
-    overflow-x: hidden; /* قفل السكرول الجانبي تماما */
-    overflow-y: auto;   /* تفعيل السكرول العمودي فقط */
+    overflow-x: hidden; 
+    overflow-y: auto;   
     position: relative;
   }
 
@@ -57,26 +57,6 @@
     margin-bottom: 30px;
   }
 
-  /* زر الموسيقى بأعلى اليسار */
-  .music-control-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #000000;
-    color: #ffffff;
-    border: 2px solid #FEEE00;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 10;
-  }
-
-  /* شعار نون المبتكر الصافي */
   .text-logo-wrapper {
     margin: 10px auto 25px auto;
     display: inline-flex;
@@ -159,6 +139,8 @@
     cursor: pointer;
     text-decoration: none;
     box-sizing: border-box;
+    position: relative;
+    z-index: 5;
   }
 
   .btn-action-copy {
@@ -204,19 +186,30 @@
     font-weight: 700;
     border: 2px solid #FEEE00;
   }
+
+  /* عنصر تأثير قصاصات الورق المتطايرة */
+  .confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #f00;
+    border-radius: 50%;
+    z-index: 999;
+    pointer-events: none;
+    animation: fly 1.2s ease-out forwards;
+  }
+
+  @keyframes fly {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(360deg); opacity: 0; }
+  }
 </style>
 </head>
 <body>
 
-<audio id="bgMusic" loop preload="auto">
-  <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-84.wav" type="audio/wav">
-</audio>
-
 <div class="bg-glow-effect"></div>
 
 <div class="promo-card">
-  
-  <button class="music-control-btn" id="musicToggle" onclick="toggleMusic()">ON</button>
 
   <div class="text-logo-wrapper">
     <div class="logo-en">noon</div>
@@ -226,7 +219,7 @@
   <div class="target-countries">عروض المملكة العربية السعودية الحصرية</div>
 
   <div class="coupon-box-wrapper">
-    <span class="box-info-text">كود الخصم الفعال للأجهزة والالكترونيات</span>
+    <span class="box-info-text">كود الخصم الفعال لجميع المنتجات والمقاضي</span>
     <span class="main-code" id="targetCode">KO77</span>
   </div>
 
@@ -234,49 +227,79 @@
   
   <a href="https://www.noon.com/saudi-ar" target="_blank" class="interactive-btn btn-action-go">التوجه للمتجر وتطبيق الخصم</a>
 
-  <p class="tech-title">يشمل الخصم الأجهزة التالية:</p>
+  <p class="tech-title">كود واحد يخصم على كل أقسام نون:</p>
   <div class="tech-categories">
-    <span>جوالات ذكية</span>
-    <span>إيربودز وسماعات</span>
-    <span>ساعات ذكية</span>
-    <span>آيباد وتابلت</span>
+    <span>👗 أزياء وملابس</span>
+    <span>🧴 عطور وتجميل</span>
+    <span>🛒 سوبرماركت</span>
+    <span>🧸 ألعاب أطفال</span>
   </div>
 </div>
 
 <script>
-const audio = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
-let isPlaying = false;
+function playCelebrationSound() {
+  const context = new (window.AudioContext || window.webkitAudioContext)();
+  
+  // النغمة الأولى
+  const osc1 = context.createOscillator();
+  const gain1 = context.createGain();
+  osc1.connect(gain1);
+  gain1.connect(context.destination);
+  osc1.type = 'sine';
+  osc1.frequency.setValueAtTime(523.25, context.currentTime); // نغمة C5
+  gain1.gain.setValueAtTime(0.3, context.currentTime);
+  gain1.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.15);
+  osc1.start();
+  osc1.stop(context.currentTime + 0.15);
 
-// تشغيل الصوت فور لمس أي مكان بالصفحة لتخطي حظر المتصفحات للتشغيل التلقائي
-document.body.addEventListener('click', () => {
-  if(!isPlaying) { playAudio(); }
-}, { once: true });
-
-function toggleMusic() {
-  if (isPlaying) {
-    audio.pause();
-    musicBtn.innerText = "OFF";
-    isPlaying = false;
-  } else {
-    playAudio();
-  }
+  // النغمة الحماسية الثانية مباشرة بعدها
+  setTimeout(() => {
+    const osc2 = context.createOscillator();
+    const gain2 = context.createGain();
+    osc2.connect(gain2);
+    gain2.connect(context.destination);
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(659.25, context.currentTime); // نغمة E5
+    gain2.gain.setValueAtTime(0.3, context.currentTime);
+    gain2.gain.exponentialRampToValueAtTime(0.01, context.currentTime + 0.3);
+    osc2.start();
+    osc2.stop(context.currentTime + 0.3);
+  }, 100);
 }
 
-function playAudio() {
-  audio.play().then(() => {
-    musicBtn.innerText = "ON";
-    isPlaying = true;
-  }).catch(() => {
-    isPlaying = false;
-  });
+function createConfetti() {
+  const colors = ['#FEEE00', '#000000', '#FF2E93', '#FF8A00', '#00E4FF', '#4CAF50'];
+  for (let i = 0; i < 60; i++) {
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    
+    // حساب اتجاهات عشوائية متفجرة من وسط الزر لشاشة كاملة
+    const x = (Math.random() - 0.5) * 350 + 'px';
+    const y = (Math.random() - 0.7) * 400 + 'px';
+    confetti.style.setProperty('--x', x);
+    confetti.style.setProperty('--y', y);
+    
+    // ألوان وتوزيع عشوائي
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.left = '50%';
+    confetti.style.top = '50%';
+    
+    document.querySelector('.promo-card').appendChild(confetti);
+    
+    // إزالة العنصر بعد انتهاء التأثير
+    setTimeout(() => { confetti.remove(); }, 1200);
+  }
 }
 
 function executeSmartCopy() {
   const codeValue = "KO77";
   const copyButton = document.getElementById("copyTrigger");
   
-  if(!isPlaying) { playAudio(); }
+  // تشغيل التأثير الصوتي والبصري البرميوم فوراً عند الضغط
+  try {
+    playCelebrationSound();
+    createConfetti();
+  } catch(e) {}
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(codeValue).then(() => {
@@ -312,7 +335,7 @@ function executeFallbackCopy(text, button) {
 }
 
 function triggerSuccessState(btn) {
-  btn.innerText = "تم النسخ بنجاح!";
+  btn.innerText = "تم النسخ بنجاح! ✅";
   btn.style.backgroundColor = "#4CAF50"; 
   btn.style.color = "#ffffff";
   btn.style.borderColor = "#4CAF50";
