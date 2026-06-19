@@ -1,1 +1,58 @@
-
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>أقوى كود خصم نون السعودية والإمارات الحصري</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { background-color: #FEEE00; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; overflow: hidden; }
+  .promo-card { background: rgba(255, 255, 255, 0.95); border: 4px solid #000000; border-radius: 28px; padding: 35px 24px; width: 100%; max-width: 365px; text-align: center; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); position: relative; }
+  .noon-brand { font-size: 46px; font-weight: 900; color: #000000; line-height: 1; margin-bottom: 6px; letter-spacing: -1.5px; }
+  .noon-brand span { background: #000000; color: #FEEE00; padding: 2px 14px; border-radius: 12px; font-size: 40px; margin-left: 6px; display: inline-block; }
+  .target-countries { font-size: 14px; color: #333333; font-weight: 700; margin-bottom: 25px; }
+  .coupon-box-wrapper { background: #000000; color: #ffffff; border-radius: 18px; padding: 22px 15px; margin-bottom: 25px; border: 3px dashed #FEEE00; position: relative; }
+  .box-info-text { font-size: 13px; color: #FEEE00; font-weight: 700; margin-bottom: 6px; display: block; }
+  .main-code { font-size: 46px; font-weight: 900; letter-spacing: 4px; color: #ffffff; display: block; }
+  .interactive-btn { font-family: 'Cairo', sans-serif; display: block; width: 100%; padding: 16px 20px; margin-bottom: 14px; border: 3px solid #000000; border-radius: 16px; font-size: 19px; font-weight: 900; cursor: pointer; text-decoration: none; box-sizing: border-box; }
+  .btn-action-copy { background: #FEEE00; color: #000000; box-shadow: 0 6px 0 #000000; }
+  .btn-action-go { background: #000000; color: #ffffff; box-shadow: 0 6px 0 #444444; font-size: 17px; }
+  .tech-categories { display: flex; justify-content: center; gap: 6px; margin-top: 25px; flex-wrap: wrap; }
+  .tech-categories span { background: rgba(0, 0, 0, 0.05); color: #222222; padding: 6px 12px; border-radius: 50px; font-size: 12px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="promo-card">
+  <div class="noon-brand"><span>noon</span>نون</div>
+  <div class="target-countries">تخفيضات السعودية والإمارات الحصرية 🇸🇦 🇦🇪</div>
+  <div class="coupon-box-wrapper">
+    <span class="box-info-text">كود الخصم الإضافي فعال ومجرب</span>
+    <span class="main-code">KO77</span>
+  </div>
+  <button class="interactive-btn btn-action-copy" id="copyTrigger" onclick="executeSmartCopy()">اضغط لنسخ الكود 📋</button>
+  <a href="https://www.noon.com" target="_blank" class="interactive-btn btn-action-go">التوجه للمتجر وتطبيق الخصم 🛍️</a>
+  <div class="tech-categories">
+    <span>📱 جوالات</span><span>🎧 إيربودز</span><span>⌚ ساعات</span><span>💻 آيباد</span>
+  </div>
+</div>
+<script>
+function executeSmartCopy() {
+  const codeValue = "KO77";
+  const copyButton = document.getElementById("copyTrigger");
+  navigator.clipboard.writeText(codeValue).then(() => {
+    copyButton.innerText = "تم النسخ بنجاح! ✅";
+    copyButton.style.backgroundColor = "#4CAF50";
+    copyButton.style.color = "#ffffff";
+    setTimeout(() => {
+      copyButton.innerText = "اضغط لنسخ الكود 📋";
+      copyButton.style.backgroundColor = "#FEEE00";
+      copyButton.style.color = "#000000";
+    }, 2000);
+  }).catch(() => {
+    alert("انسخ الكود يدويًا: " + codeValue);
+  });
+}
+</script>
+</body>
+</html>
